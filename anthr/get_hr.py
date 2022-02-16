@@ -17,7 +17,7 @@ from .defaults import SERIAL, LOG
 logger = logging.getLogger(__name__)
 
 
-def get_hr(filename=None, serial=SERIAL, output_path=".",driver='serial'):
+def get_hr(filename=None, serial=SERIAL, output_path=".",driver_type='serial'):
     """get the heartrate from the ant+ sensor and write to a file
 
     Args:
@@ -26,10 +26,10 @@ def get_hr(filename=None, serial=SERIAL, output_path=".",driver='serial'):
         output_path (str, optional): ouptut path of resulting file. Defaults to ".".
 
     """
-    if driver.lower() == 'serial':
+    if driver_type.lower() == 'serial':
         device = driver.USB1Driver(serial, log=LOG)
-    elif driver.lower() == 'usb':
-        device = driver.USB2Driver(log=LOG, debug=DEBUG)
+    elif driver_type.lower() == 'usb':
+        device = driver.USB2Driver(log=LOG, debug=None)
     antnode = Node(device)
     antnode.start()
     network = Network(key=NETWORK_KEY_ANT_PLUS, name="N:ANT+")
