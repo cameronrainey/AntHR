@@ -14,10 +14,10 @@ setup(
     author_email=__email__,
     packages=find_packages(include=["anthr", "anthr.*"]),
     install_requires=[
-        "wheel",
         "black",
         "click",
-        'ant @ git+https://github.com/cameronrainey/python-ant.git@0.1.1#egg=ant',
+    #    'ant @ git+https://github.com/cameronrainey/python-ant.git@0.1.1#egg=ant',
+        'ant @ git+https://github.com/cameronrainey/openant.git@v0.4.1.1#egg=ant',
     ],
     entry_points= {
         "console_scripts": ["anthr=anthr.cli:cli"]
