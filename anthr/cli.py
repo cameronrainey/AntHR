@@ -11,7 +11,7 @@ from .get_hr import get_hr
 @click.option("--output_path", default=".", type=str, help="Output Directory")
 @click.option("--driver", default=".", type=str, help="serial/usb")
 def cli(filename, serial, output_path,driver):
-    get_hr(filename=filename, serial=serial, output_path=output_path,driver=driver)
+    get_hr(filename=filename, serial=serial, output_path=output_path,driver_type=driver)
 
 
 if __name__ == "__main__":
