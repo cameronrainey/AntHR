@@ -20,7 +20,7 @@ class HeartRate(object):
 
         #Set the filename
         if filename is None:
-            filename = datetime.now().strftime("%Y_%m_d_%H_%M_%s") + ".csv"
+            filename = datetime.now().strftime("%Y_%m_d_%H_%M_%S") + ".csv"
         
         self.filename = filename
 
@@ -30,7 +30,7 @@ class HeartRate(object):
         self.output_filename = os.path.join(output_path, filename)
         print("--------------------------------")
         print(f"Output File: {self.output_filename}")
-        print(f'Starting Time: {datetime.now().strftime("%Y-%m-d %H:%M:%s")}')
+        print(f'Starting Time: {datetime.now().strftime("%Y-%m-d %H:%M:%S")}')
 
         with open(self.output_filename, "w") as f:
             f.write("posix_timestamp,heart_rate\n")
