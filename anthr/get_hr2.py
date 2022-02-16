@@ -28,9 +28,7 @@ class HeartRate(object):
         self.output_path = output_path
 
         self.output_filename = os.path.join(output_path, filename)
-        print("--------------------------------")
-        print(f"Output File: {self.output_filename}")
-        print(f'Starting Time: {datetime.now().strftime("%Y-%m-d %H:%M:%S")}')
+        
 
         with open(self.output_filename, "w") as f:
             f.write("posix_timestamp,heart_rate\n")
@@ -41,6 +39,9 @@ class HeartRate(object):
         with self.lock:
 
             if self._start_time is None:
+                print("--------------------------------")
+                print(f"Output File: {self.output_filename}")
+                print(f'Starting Time: {datetime.now().strftime("%Y-%m-d %H:%M:%S")}')
                 self._start_time = time.time()
             
             self.heartrate = data[7]
