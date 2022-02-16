@@ -17,7 +17,7 @@ setup(
         "black",
         "click",
     #    'ant @ git+https://github.com/cameronrainey/python-ant.git@0.1.1#egg=ant',
-        'ant @ git+https://github.com/cameronrainey/openant.git@v0.4.1.1#egg=ant',
+    #    'ant @ git+https://github.com/cameronrainey/openant.git@v0.4.1#egg=ant',
     ],
     entry_points= {
         "console_scripts": ["anthr=anthr.cli:cli"]
